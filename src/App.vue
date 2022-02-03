@@ -1,27 +1,36 @@
 <template>
   <!--<img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>-->
+  <div
+    class="presentation-wrapper"
+    ref="wrapper"
+    tabindex="0"
+    @keydown.left="goToPrevSlide"
+    @keydown.right="goToNextSlide"
+    @keydown.up="goToPrevSlide"
+    @keydown.down="goToNextSlide"
+  >
+    <PresentationCover
+      v-if='currentSlideNumber === 0'
+      :title="title"
+      :subtitle="subtitle"
+      @click="goToNextSlide"
+    />
 
-  <PresentationCover
-    v-if='currentSlideNumber === 0'
-    :title="title"
-    :subtitle="subtitle"
-    @click="goToNextSlide"
-  />
+    <PresentationContents
+      v-if='currentSlideNumber === 1'
+      :title="contentsTitle"
+      :contents="contents"
+      @setSlide="setCurrentSlide"
+      @click="goToNextSlide"
+    />
 
-  <PresentationContents
-    v-if='currentSlideNumber === 1'
-    :title="contentsTitle"
-    :contents="contents"
-    @setSlide="setCurrentSlide"
-    @click="goToNextSlide"
-  />
-
-  <PresentationSlide
-    v-if='currentSlideNumber > 1'
-    :slide="currentSlide"
-    @click="goToNextSlide"
-  />
+    <PresentationSlide
+      v-if='currentSlideNumber > 1'
+      :slide="currentSlide"
+      @click="goToNextSlide"
+    />
+  </div>
 </template>
 
 <script>
@@ -100,26 +109,32 @@ export default {
     }
   },
   methods: {
+    goToPrevSlide() {
+      if (this.currentSlideNumber !== 0) {
+        this.currentSlideNumber--;
+      }
+    },
+
     goToNextSlide() {
       if (this.currentSlideNumber < this.slides.length + 1) {
-          this.currentSlideNumber++;
-      } else {
-          this.currentSlideNumber = 0;
+        this.currentSlideNumber++;
       }
     },
 
     setCurrentSlide(slideId) {
       this.currentSlideNumber = slideId;
     }
+  },
+  mounted() {
+    this.$refs['wrapper'].focus();
   }
 }
 </script>
 
 <style>
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 #app {
@@ -128,9 +143,5 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
 }
 </style>
