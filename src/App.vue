@@ -6,29 +6,37 @@
     v-if='currentSlideNumber === 0'
     :title="title"
     :subtitle="subtitle"
-    @click="setCurrentSlide"
+    @click="goToNextSlide"
+  />
+
+  <PresentationContents
+    v-if='currentSlideNumber === 1'
+    :title="contentsTitle"
+    :contents="contents"
+    @setSlide="setCurrentSlide"
+    @click="goToNextSlide"
   />
 
   <PresentationSlide
-    v-if='currentSlideNumber > 0'
+    v-if='currentSlideNumber > 1'
     :slide="currentSlide"
-    @click="setCurrentSlide"
+    @click="goToNextSlide"
   />
 </template>
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue';
 import PresentationCover from './components/PresentationCover.vue';
+import PresentationContents from './components/PresentationContents.vue';
 import PresentationSlide from './components/PresentationSlide.vue';
-// import PresentationSlide from './components/PresentationSlide.vue';
 
 export default {
   name: 'App',
   components: {
     // HelloWorld,
     PresentationCover,
-    PresentationSlide,
-    // PresentationSlide
+    PresentationContents,
+    PresentationSlide
   },
   data: () => {
     return {
@@ -38,37 +46,37 @@ export default {
       contentsTitle: 'Содержание',
       slides: [
         {
-          id: 1,
+          id: 2,
           title: 'Преимущества Vue',
           content: '<ul><li>Быстрота</li><li>Vue.js - это фреймворк</li><li>Двухстороннее связывание</li><li>Реактивность</li><li>Поддержка JS и Typescript</li></ul>'
         },
         {
-          id: 2,
+          id: 3,
           title: 'Установка, быстрый старт',
           content: '<ul><li>Подключение напрямую через CDN</li><li>Установка через NPM</li><li>Установка через Vue CLI</li></ul>'
         },
         {
-          id: 3,
+          id: 4,
           title: 'Базовая архитектура приложения',
           content: '<ul><li>Структура папок</li><li>Основные файлы</li></ul>'
         },
         {
-          id: 4,
+          id: 5,
           title: 'Компоненты, их свойства и методы',
           content: ''
         },
         {
-          id: 5,
+          id: 6,
           title: 'Vuex',
           content: ''
         },
         {
-          id: 6,
+          id: 7,
           title: 'Vue router',
           content: ''
         },
         {
-          id: 7,
+          id: 8,
           title: 'Vue devtools',
           content: ''
         },
@@ -78,16 +86,30 @@ export default {
   computed: {
     currentSlide() {
       return this.slides.find(slide => slide.id === this.currentSlideNumber);
+    },
+
+    contents() {
+      return this.slides.map((slide) => {
+        const { id, title } = slide;
+
+        return {
+          id,
+          title
+        }
+      });
     }
   },
   methods: {
-    setCurrentSlide() {
-      if (this.currentSlideNumber < this.slides.length) {
+    goToNextSlide() {
+      if (this.currentSlideNumber < this.slides.length + 1) {
           this.currentSlideNumber++;
       } else {
           this.currentSlideNumber = 0;
       }
+    },
 
+    setCurrentSlide(slideId) {
+      this.currentSlideNumber = slideId;
     }
   }
 }
