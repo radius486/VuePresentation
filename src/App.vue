@@ -123,10 +123,17 @@ export default {
 
     setCurrentSlide(slideId) {
       this.currentSlideNumber = slideId;
+    },
+
+    setFocus() {
+      this.$refs['wrapper'].focus();
     }
   },
   mounted() {
-    this.$refs['wrapper'].focus();
+    this.setFocus();
+  },
+  updated() {
+    this.setFocus();
   }
 }
 </script>
