@@ -62,7 +62,7 @@ export default {
         {
           id: 3,
           title: 'Установка, быстрый старт',
-          content: '<ul><li><span>Подключение напрямую через CDN</span><img style="margin-top: 10px;" height=30 src="images/script1.png"></li><li><span>Установка через NPM</span></br><code>npm install vue</code></li><li><span>Установка через Vue CLI</span></br><code>npm install -g @vue/cli</code></li></ul>'
+          content: '<ul><li><span>Подключение напрямую через CDN</span><img style="margin-top: 10px;" height=30 src="images/script3.png"></li><li><span>Установка через NPM</span></br><code>npm install vue</code></li><li><span>Установка через Vue CLI</span></br><code>npm install -g @vue/cli</code></li></ul>'
         },
         {
           id: 4,

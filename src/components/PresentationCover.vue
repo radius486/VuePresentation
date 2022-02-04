@@ -24,7 +24,8 @@ export default {
       flex-direction: column;
       width: 100%;
       min-height: 100vh;
-      background-color: rgb(0, 81, 124);
+      /*background-color: rgb(0, 81, 124);*/
+      background-color: #2c3e50;
       user-select: none;
     }
 
