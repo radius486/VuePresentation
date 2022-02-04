@@ -62,7 +62,7 @@ export default {
         {
           id: 3,
           title: 'Установка, быстрый старт',
-          content: '<ul><li>Подключение напрямую через CDN</li><li>Установка через NPM</li><li>Установка через Vue CLI</li></ul>'
+          content: '<ul><li><span>Подключение напрямую через CDN</span><img style="margin-top: 10px;" height=30 src="images/script1.png"></li><li><span>Установка через NPM</span></br><code>npm install vue</code></li><li><span>Установка через Vue CLI</span></br><code>npm install -g @vue/cli</code></li></ul>'
         },
         {
           id: 4,
@@ -71,21 +71,26 @@ export default {
         },
         {
           id: 5,
-          title: 'Компоненты, их свойства и методы',
-          content: ''
+          title: 'Компоненты',
+          content: '<ul><li>Структура компонента</li><li>Данные</li><li>Вычисляемые свойства</li><li>Методы</li><li>Наблюдатели</li><li>Директивы</li><li>Свойства</li></ul>'
         },
         {
           id: 6,
+          title: 'Хуки Жизненного цикла компонента',
+          content: `<div class="flex-row"><ul><li>beforeCreate</li><li>created</li><li>beforeMount</li><li>mounted</li><li>beforeUpdate</li><li>updated</li><li>beforeUnmount</li><li>unmounted</li></ul><img height=500 style="background: #fff;" src="images/livecycle.png"></div>`
+        },
+        {
+          id: 7,
           title: 'Vuex',
           content: ''
         },
         {
-          id: 7,
+          id: 8,
           title: 'Vue router',
           content: ''
         },
         {
-          id: 8,
+          id: 9,
           title: 'Vue devtools',
           content: ''
         },
