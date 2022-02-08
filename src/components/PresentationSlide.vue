@@ -55,30 +55,26 @@ export default {
       text-align: left;
     }
 
-    ::v-deep ul {
+    :deep ul {
         margin-right: 100px;
     }
 
-    ::v-deep li {
+    :deep li {
         margin-bottom: 10px;
         list-style-type: square;
     }
 
-    ::v-deep code {
+    :deep code {
       color: rgb(18, 236, 84);
     }
 
-    ::v-deep img {
-      /* max-height: 70vh; */
-    }
-
-    ::v-deep .flex-row {
+    :deep .flex-row {
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
     }
 
-    ::v-deep .flex-column {
+    :deep .flex-column {
       display: flex;
       align-items: flex-start;
       justify-content: flex-start;
