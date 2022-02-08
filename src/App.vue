@@ -57,7 +57,7 @@ export default {
         {
           id: 2,
           title: 'Преимущества Vue',
-          content: '<ul><li>Быстрота</li><li>Vue.js - это фреймворк</li><li>Двухстороннее связывание</li><li>Реактивность</li><li>Поддержка JS и Typescript</li></ul>'
+          content: '<div class="flex-row"><ul><li>Быстрота</li><li>Vue.js - это фреймворк</li><li>Двухстороннее связывание</li><li>Реактивность</li><li>Поддержка JS и Typescript</li></ul><img style="margin-top: 20px;" height=300 src="images/logo.png"></div>'
         },
         {
           id: 3,
@@ -67,32 +67,32 @@ export default {
         {
           id: 4,
           title: 'Базовая архитектура приложения',
-          content: '<ul><li>Структура папок</li><li>Основные файлы</li></ul>'
+          content: '<div class="flex-row"><ul><li>Структура папок</li><li>Основные файлы</li></ul><img style="margin-top: 20px;" height=450 src="images/tree.png"></div>'
         },
         {
           id: 5,
           title: 'Компоненты',
-          content: '<ul><li>Структура компонента</li><li>Данные</li><li>Вычисляемые свойства</li><li>Методы</li><li>Наблюдатели</li><li>Директивы</li><li>Свойства</li></ul>'
+          content: '<ul><li>Структура компонента</li><li>Данные: <code>data</code></li><li>Вычисляемые свойства: <code>computed</code></li><li>Методы: <code>methods</code></li><li>Наблюдатели: <code>watch</code></li><li>Директивы: <code>v-for</code>, <code>v-if</code>, <code>v-else</code></li><li>Свойства: <code>props</code></li></ul>'
         },
         {
           id: 6,
-          title: 'Хуки Жизненного цикла компонента',
-          content: `<div class="flex-row"><ul><li>beforeCreate</li><li>created</li><li>beforeMount</li><li>mounted</li><li>beforeUpdate</li><li>updated</li><li>beforeUnmount</li><li>unmounted</li></ul><img height=500 style="background: #fff;" src="images/livecycle.png"></div>`
+          title: 'Хуки жизненного цикла компонента',
+          content: `<div class="flex-row"><ul><li><code>beforeCreate</code></li><li><code>created</code></li><li><code>beforeMount</code></li><li><code>mounted</code></li><li><code>beforeUpdate</code></li><li><code>updated</code></li><li><code>beforeUnmount</code></li><li><code>unmounted</code></li></ul><img height=500 style="background: #fff;" src="images/livecycle.png"></div>`
         },
         {
           id: 7,
           title: 'Vuex',
-          content: ''
+          content: '<div class="flex-row"><ul><li>State</li><li>Getters</li><li>Actions</li><li>Mutations</li></ul><img height=500 style="background: #fff;" src="images/vuex.png"></div>'
         },
         {
           id: 8,
           title: 'Vue router',
-          content: ''
+          content: '<div class="flex-row"><ul><li>router-view</li><li>router-link</li><li>Хуки роутера: <ul><li><code>beforeEach</code></li><li><code>afterEach</code></li><li><code>beforeEnter</code></li></ul></li></ul><img height=500 style="background: #fff;" src="images/router.png"></div>'
         },
         {
           id: 9,
           title: 'Vue devtools',
-          content: ''
+          content: '<img style="margin-top: 20px;" height=450 src="images/v-devtools.png">'
         },
       ]
     };
