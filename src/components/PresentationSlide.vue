@@ -10,7 +10,36 @@ export default {
   name: 'PresentationSlide',
   props: {
     slide: Object
-  }
+  },
+  // created() {
+  //   console.log('Created');
+  // },
+  // mounted() {
+  //   console.log('Mounted');
+  // },
+  // updated() {
+  //   console.log('Updated');
+  // },
+  // beforeUnmount() {
+  //   console.log('Before unmount');
+  // },
+  // unmounted() {
+  //   console.log('Unmounted');
+  // },
+  // watch: {
+  //   slide: function (val) {
+  //     console.log(val.title);
+  //   }
+  // },
+  // watch: {
+  //   slide: {
+  //     // immediate: true,
+  //     // deep: true,
+  //     handler(newVal, oldVal) {
+  //       console.log(`New ID: ${newVal.id}`, `Old ID: ${oldVal.id}`);
+  //     }
+  //   },
+  // },
 }
 </script>
 
